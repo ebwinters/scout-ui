@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { getScouts } from '../api/queries';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-const Profile = () => {
+const Scout = () => {
 	const { user } = useAuth0();
     const { isAuthenticated } = useAuth0();
     const [ scouts, setScouts ] = useState([]);
@@ -21,11 +23,13 @@ const Profile = () => {
                 <div className="container">
                     {
                         scouts.map((scout, index) => (
-                            <div key={index}>
-                            <p key={index} className="userInfo" id="userInfo1">
-                                Scout ID: {scout.scoutId}
-                            </p>
-                            </div>
+                            <Card key={index} className="scoutContainer">
+                                <Card.Body>
+                                    <Card.Title>{scout.title}</Card.Title>
+                                    <Card.Text>{scout.notes}</Card.Text>
+                                    <Button variant="primary">More details</Button>
+                                </Card.Body>
+                            </Card>
                         ))
                     }
                 </div>
@@ -35,4 +39,4 @@ const Profile = () => {
     return <><div>No scouts to show</div></>
 }
 
-export default Profile
+export default Scout

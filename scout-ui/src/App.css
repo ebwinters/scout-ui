@@ -1,18 +1,7 @@
-* {
-	margin: 0;
-	padding: 0;
+.scoutContainer {
+	margin-bottom: 1em;
 }
-.appName {
-	color: #fff;
-}
-.logoutBtn {
-	margin: auto;
-}
-.userInfo {
-	background-color: #d9d9d9;
-	box-shadow: 5px 0px 0px grey;
-	width: 35%;
-	padding: 20px;
-	border-radius: 6px;
-	font-weight: 600;
+
+.btn {
+	margin: 1px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import Profile from "./Profile";
+import Button from 'react-bootstrap/Button';
 
 const LogoutButton = () => {
 	const { logout, isAuthenticated } = useAuth0();
@@ -8,13 +8,11 @@ const LogoutButton = () => {
 	if (isAuthenticated) {
 		return (
 			<>
-				<button className="btn btn-primary
-					mx-5 my-5 px-4 logoutBtn"
+				<Button className="btn btn-primary"
 					onClick={() => logout({ returnTo: window.location.origin })}>
 				Log Out
-				</button>
+				</Button>
 				<br />
-				<Profile />
 			</>
 		);
 	}
