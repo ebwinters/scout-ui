@@ -5,7 +5,7 @@ export const getScouts = () => {
     method: 'GET',
         headers: {
             'Accept': 'application/json',
-            'Authorization': "Basic RXRoYW46V2ludGVycw=="
+            'Authorization': "Basic "
         },
     })
     .then(response => response.json())
